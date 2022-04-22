@@ -5,10 +5,27 @@
  */
 package dataaccess;
 
+import javax.persistence.EntityManager;
+import models.Category;
+import models.Role;
+
 /**
  *
  * @author Jaren
  */
 public class RoleDB {
     
+    public Role get(Integer roleID) { 
+        
+        EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
+        
+        try { 
+            
+            Role role = em.find(Role.class, roleID); 
+            return role; 
+        } finally { 
+            
+            em.close(); 
+        }
+    } 
 }
