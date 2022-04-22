@@ -21,6 +21,58 @@ import models.User;
  */
 public class UserService {
     
+    public User loginUser(String email, String password)  { 
+        
+        UserDB userData = new UserDB(); 
+        User user = userData.get(email);
+        
+        try { 
+            String userEmail = user.getEmail(); 
+            String userPassword = user.getPassword();
+            
+            if( !(userEmail.equals(email) && userPassword.equals(password)) ) { 
+            
+            user = null;
+        } 
+        } catch (NullPointerException nex) { 
+        } 
+        
+        return user;
+    } 
+    
+    
+    public void registerUser(String email, String firstName, String lastName, String password) throws Exception { 
+        
+        UserDB userData = new UserDB(); 
+        User user = new User(email, true, firstName, lastName, password); 
+        userData.insert(user);
+    } 
+    
+    
+    public void userAccountEdit(String email, String firstName, String lastName, String password, String oldEmail) throws Exception { 
+        
+        UserDB userData = new UserDB(); 
+        User user = userData.get(oldEmail);
+        user.setEmail(email);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPassword(password);
+        
+        userData.update(user);
+    } 
+    
+    
+    //Note: The user must be active to log in to their account again
+    public void userDeactivate(String email) throws Exception { 
+    
+        UserDB userData = new UserDB(); 
+        User user = userData.get(email);
+        user.setActive(false); 
+        
+        userData.update(user);
+    } 
+    
+    
     //Get Users to display for Admin
     public List<User> getAllUsers( ) throws Exception { 
     

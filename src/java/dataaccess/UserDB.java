@@ -18,7 +18,7 @@ import models.User;
  */
 public class UserDB {
     
-    public User get(String email) throws Exception { 
+    public User get(String email) { 
 
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
 
