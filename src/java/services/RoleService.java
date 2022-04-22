@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dataaccess;
+package services;
 
 /**
  *
  * @author Jaren
  */
-public class CategoriesDB {
+public class RoleService {
     
 }

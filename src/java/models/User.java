@@ -9,6 +9,6 @@ package models;
  *
  * @author Jaren
  */
-public class Users {
+public class User {
     
 }

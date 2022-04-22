@@ -9,6 +9,6 @@ package services;
  *
  * @author Jaren
  */
-public class ItemsService {
+public class CategoryService {
     
 }

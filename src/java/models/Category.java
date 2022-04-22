@@ -9,6 +9,6 @@ package models;
  *
  * @author Jaren
  */
-public class Items {
+public class Category {
     
 }
