@@ -22,7 +22,7 @@ import models.User;
 public class UserService {
     
     //Get Users to display for Admin
-    public List<User> getAllUsers( ) { 
+    public List<User> getAllUsers( ) throws Exception { 
     
         UserDB userData = new UserDB(); 
         List<User> allUsers = userData.getAll();

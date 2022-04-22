@@ -18,7 +18,7 @@ import models.User;
  */
 public class UserDB {
     
-    public User get(String email) { 
+    public User get(String email) throws Exception { 
 
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
 
@@ -33,7 +33,7 @@ public class UserDB {
     } 
     
     
-    public List<User> getAll() { 
+    public List<User> getAll() throws Exception { 
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         
@@ -71,7 +71,7 @@ public class UserDB {
     } 
     
     
-    public void delete(User user) { 
+    public void delete(User user) throws Exception { 
     
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         EntityTransaction trans = em.getTransaction();
@@ -94,7 +94,7 @@ public class UserDB {
     } 
     
     
-    public void update(User user) { 
+    public void update(User user) throws Exception { 
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         EntityTransaction trans = em.getTransaction();

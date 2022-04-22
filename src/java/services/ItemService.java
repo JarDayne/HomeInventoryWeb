@@ -20,7 +20,7 @@ import models.User;
 public class ItemService {
     
     //Get Items to display for Owner
-    public List<Item> getAllByOwner(String email) { 
+    public List<Item> getAllByOwner(String email) throws Exception { 
     
         ItemDB itemData = new ItemDB(); 
         List<Item> ownedItems = itemData.getAllByOwnerEmail(email); 

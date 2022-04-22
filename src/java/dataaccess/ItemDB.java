@@ -19,7 +19,7 @@ import models.User;
 public class ItemDB {
     
     //Get all Items as list
-    public List<Item> getAll() { 
+    public List<Item> getAll() throws Exception { 
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         
@@ -34,7 +34,7 @@ public class ItemDB {
     } 
     
     
-    public Item get(Integer itemID) { 
+    public Item get(Integer itemID) throws Exception { 
     
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         
@@ -50,7 +50,7 @@ public class ItemDB {
     
     
     //Get Item list by category MAY BE NOT NEEDED
-    public List<Item> getAllByCategory(Category category) { 
+    public List<Item> getAllByCategory(Category category) throws Exception { 
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         
@@ -65,7 +65,7 @@ public class ItemDB {
     }
      
     //Get Item list by User for User Items Display
-    public List<Item> getAllByOwnerEmail(String email) { 
+    public List<Item> getAllByOwnerEmail(String email) throws Exception { 
     
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         
@@ -104,7 +104,7 @@ public class ItemDB {
     } 
     
     //Delete Item
-    public void delete(Item item) { 
+    public void delete(Item item) throws Exception { 
     
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         EntityTransaction trans = em.getTransaction();
@@ -128,7 +128,7 @@ public class ItemDB {
     
     
     //Edit Item
-    public void update(Item item) { 
+    public void update(Item item) throws Exception { 
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         EntityTransaction trans = em.getTransaction();

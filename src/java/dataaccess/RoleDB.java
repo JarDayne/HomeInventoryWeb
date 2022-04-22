@@ -15,7 +15,7 @@ import models.Role;
  */
 public class RoleDB {
     
-    public Role get(Integer roleID) { 
+    public Role get(Integer roleID) throws Exception { 
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager(); 
         
