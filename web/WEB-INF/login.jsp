@@ -11,7 +11,7 @@
     <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="/resources/css/loginStylez.css"/>
+    <link type="text/css" rel="stylesheet" href="/WEB-INF/resources/css/loginStylez.css"/>
     <title>nVentory - Login</title>
     </head>
     <body>

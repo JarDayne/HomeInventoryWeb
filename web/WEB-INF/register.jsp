@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="/resources/css/registerStylez.css"/>
+    <link type="text/css" rel="stylesheet" href="/WEB-INF/resources/css/registerStylez.css"/>
     <title>nVentory - Register</title>
 </head>
 <body>
