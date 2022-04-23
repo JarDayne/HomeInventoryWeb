@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import models.User;
+import services.UserService;
 
 /**
  *
@@ -34,6 +36,58 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        String action = request.getParameter("action");
+        String message = "";
         
+        switch(action) {
+            case "login":
+                String email = request.getParameter("email");
+                String password = request.getParameter("password");
+                
+                UserService us = new UserService();
+                User user=null;
+                if(email == null) {
+                    
+                    message = "Missing Email!";
+                } 
+                if(password == null) { 
+                    
+                    message = "Missing Password!";
+                } 
+                if(email == null && password == null)
+                { 
+                
+                    message = "Missing Email & Password!";
+                } else {
+
+                    user = us.loginUser(email, password);
+                    message = "Invalid account.";
+                }
+
+                if (user == null) {
+                    
+                    request.setAttribute("message", message);
+                    getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+                    return;
+                }
+
+                HttpSession session = request.getSession();
+                session.setAttribute("email", email);
+                session.setAttribute("role", user.getRole().getRoleId());
+
+                if (user.getRole().getRoleId() == 1) {
+                    response.sendRedirect("admin");
+                } else {
+                    response.sendRedirect("notes");
+                }
+                break;
+            
+            
+            //case "register": 
+                
+                
+            default: response.sendRedirect("login"); break;
+        }
     }
+    
 }
