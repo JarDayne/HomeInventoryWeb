@@ -45,6 +45,9 @@ public class UserService {
         
         UserDB userData = new UserDB(); 
         User user = new User(email, true, firstName, lastName, password); 
+        Role role = new Role(2, "regular user");
+        user.setRole(role);
+        
         userData.insert(user);
     } 
     
@@ -62,7 +65,7 @@ public class UserService {
     } 
     
     
-    //Note: The user must be active to log in to their account again
+    //Note: The user must be active to log in to their account again after this method
     public void userDeactivate(String email) throws Exception { 
     
         UserDB userData = new UserDB(); 

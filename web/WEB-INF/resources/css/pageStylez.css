@@ -1,0 +1,98 @@
+
+
+
+
+
+body {
+    margin: 0;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-family: 'Lucida Sans';
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+body::after {
+    background-image: linear-gradient(#caecde, #eeddb9);
+    background-size: cover;
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+.mainpanel {
+    width: 90vw;
+    height: 90vh;
+    border: 2px solid maroon;
+    margin: auto;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    color: maroon;
+    font-size: large;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+
+#actionpane {
+    /*border: 2px solid green;*/
+    margin: 10% auto;
+    height: 7%;
+    width: 95%;
+    display: flex;
+}
+
+#actionpane div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centeredpanel {
+    margin: auto;
+    width: 80%;
+    /*border: 3px solid darkblue;*/
+}
+
+.fields {
+    margin-left: 0;
+}
+
+table {
+    border-collapse: separate;
+    border: 1px black solid;
+    font-size: x-small;
+}
+th,td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+@media (min-width: 900px) {
+
+    #actionpane {
+        /*border: 2px solid green;*/
+        margin: 0 auto;
+        height: 7%;
+        width: 95%;
+        display: flex;
+    }
+
+    table {
+        border-collapse: separate;
+        border: 1px black solid;
+        font-size: medium;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

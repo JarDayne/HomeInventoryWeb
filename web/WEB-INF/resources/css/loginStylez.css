@@ -1,0 +1,125 @@
+
+
+body {
+    margin: 0;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    font-family: 'Lucida Sans';
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+body::after {
+    background-image: linear-gradient(#caecde, #eeddb9);
+    background-size: cover;
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+.mainpanel {
+    width: 90vw;
+    height: 90vh;
+    border: 2px solid maroon;
+    margin: auto;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    color: maroon;
+}
+
+h2 {
+    text-align: left;
+    padding-left: 3%;
+}
+
+.centeredpanel {
+    margin: auto;
+    width: 80%;
+    /*border: 3px solid darkblue;*/
+}
+
+#loginpane {
+    margin-top: 15%;
+    /*border: 1px black solid;*/
+    padding: 1em;
+    border-radius: 11px;
+}
+
+#loginpane:hover,
+#loginpane input:focus {
+    background-color: rgba(137,137,137,0.67);
+    outline: none;
+    border-color: maroon;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+#loginpane input {
+    width: 120%;
+    font-size: large;
+    font-family: "Lucida Sans";
+    font-weight: bold;
+}
+
+.fields {
+    margin-left: 0;
+}
+
+#actionpane {
+    /*border: 2px solid green;*/
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 8em;
+}
+
+#signin {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 30%;
+    font-weight: bold;
+    font-size: 1.5em;
+    /*border: 1px solid black;*/
+}
+
+#signin input {
+    width: 100%;
+    height: 100%;
+    background-color: goldenrod;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-family: "Lucida Bright";
+    border: none;
+    border-radius: 5px;
+}
+
+a {
+    letter-spacing: 1px;
+}
+
+#registerprompt {
+    /*border: 2px solid blue;*/
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+
+    #loginpane {
+        margin-top: 3em;
+        border: 1px black solid;
+        padding: 1em;
+        border-radius: 11px;
+    }
+}
