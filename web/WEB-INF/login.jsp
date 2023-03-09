@@ -11,7 +11,7 @@
     <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="/WEB-INF/resources/css/loginStylez.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/loginStylez.css"/>
     <title>nVentory - Login</title>
     </head>
     <body>
@@ -26,7 +26,7 @@
     <input type="text" placeholder="Email" name="user_email">
     </div>
     <div class="centeredpanel fields">
-    <input type="text" placeholder="Password" name="user_email">
+    <input type="text" placeholder="Password" name="user_password">
     </div>
     </div>
 

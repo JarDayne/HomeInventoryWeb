@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="/WEB-INF/resources/css/pageStylez.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/pageStylez.css"/>
     <title>nVentory - Inventory</title>
 </head>
 <body>

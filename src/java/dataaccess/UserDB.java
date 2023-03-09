@@ -39,7 +39,7 @@ public class UserDB {
         
         try { 
         
-            List<User> allUser = em.createNamedQuery("Usser.findAll", User.class).getResultList(); 
+            List<User> allUser = em.createNamedQuery("User.findAll", User.class).getResultList(); 
             return allUser;
         } finally { 
         

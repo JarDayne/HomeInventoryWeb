@@ -8,5 +8,6 @@
     <class>models.Item</class>
     <class>models.Role</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties/>
   </persistence-unit>
 </persistence>

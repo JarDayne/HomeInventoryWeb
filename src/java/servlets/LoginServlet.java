@@ -41,8 +41,8 @@ public class LoginServlet extends HttpServlet {
         
         switch(action) {
             case "login":
-                String email = request.getParameter("email");
-                String password = request.getParameter("password");
+                String email = request.getParameter("user_email");
+                String password = request.getParameter("user_password");
                 
                 UserService us = new UserService();
                 User user=null;
@@ -78,7 +78,7 @@ public class LoginServlet extends HttpServlet {
                 if (user.getRole().getRoleId() == 1) {
                     response.sendRedirect("admin");
                 } else {
-                    response.sendRedirect("notes");
+                    response.sendRedirect("inventory");
                 }
                 break;
             
