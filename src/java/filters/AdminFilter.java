@@ -30,7 +30,8 @@ public class AdminFilter implements Filter {
         
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpSession session = httpRequest.getSession();
-        int role = Integer.parseInt((String)session.getAttribute("role"));
+        //int role = Integer.parseInt((String)session.getAttribute("role"));
+        int role = (int) session.getAttribute("role");
         
         if(role != 1) {
             
