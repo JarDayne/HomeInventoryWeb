@@ -21,8 +21,8 @@
     <hr>
 
     <div id="actionpane">
-        <div><a href="/HomeInventory/admin">&lt;Admin</a></div>
-        <div><a href="/HomeInventory/login">Logout&gt;</a></div>
+        <div><a href="<c:url value='/admin' />">&lt;Admin</a></div>
+        <div><a href="<c:url value='/login' />">Logout&gt;</a></div>
     </div>
 
     <hr>
@@ -71,20 +71,21 @@
     <div>
         Home Items
         <table>
-            <tr>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>
-                </th>
-                <th>
-                </th>
-            </tr>
+                <tr>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
 
+            <c:forEach var="item" items="${userItems.item}">
             <tr>
-                <td>Category</td>
-                <td>Name</td>
-                <td>Price</td>
+                <td>${item.category}</td>
+                <td>${item.item_name}</td>
+                <td>${item.price}</td>
                 <td>
                     <form action="inventory?action=edit" method="post">
                         <input value="id" hidden>
@@ -106,6 +107,7 @@
                     </form>
                 </td>
             </tr>
+            </c:forEach>
         </table>
     </div>
 </div>

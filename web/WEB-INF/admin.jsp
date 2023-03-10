@@ -21,8 +21,8 @@
     <hr>
 
     <div id="actionpane">
-        <div><a href="/HomeInventory/inventory">&lt;Inventory</a></div>
-        <div><a href="/HomeInventory/login">Logout&gt;</a></div>
+        <div><a href="<c:url value='/inventory' />">&lt;Inventory</a></div>
+        <div><a href="<c:url value='/login' />">Logout&gt;</a></div>
     </div>
 
     <hr>

@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet {
         
         String action = request.getParameter("action");
         String message = "";
+        HttpSession session = request.getSession();
         
         switch(action) {
             case "login":
@@ -46,32 +47,30 @@ public class LoginServlet extends HttpServlet {
                 
                 UserService us = new UserService();
                 User user=null;
-                if(email == null) {
-                    
-                    message = "Missing Email!";
-                } 
-                if(password == null) { 
-                    
-                    message = "Missing Password!";
-                } 
+                
+               
                 if(email == null && password == null)
                 { 
-                
+               
                     message = "Missing Email & Password!";
+                } else if(password == null) { 
+                    
+                    message = "Missing Password!";
+                } else if(email == null) {
+                    
+                    message = "Missing Email!";
                 } else {
 
                     user = us.loginUser(email, password);
-                    message = "Invalid account.";
                 }
 
                 if (user == null) {
-                    
+                    message = "Invalid account.";
                     request.setAttribute("message", message);
                     getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
                     return;
                 }
 
-                HttpSession session = request.getSession();
                 session.setAttribute("email", email);
                 session.setAttribute("role", user.getRole().getRoleId());
 
@@ -83,7 +82,15 @@ public class LoginServlet extends HttpServlet {
                 break;
             
             
-            //case "register": 
+            case "register": 
+                String userRegister = (String) session.getAttribute("userRegisterForm");
+                
+                if(userRegister != null) {
+                    session.setAttribute("userRegisterForm", "true");
+                }
+                
+                response.sendRedirect("login");
+                break;
                 
                 
             default: response.sendRedirect("login"); break;
