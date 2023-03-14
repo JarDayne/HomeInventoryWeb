@@ -81,10 +81,10 @@
                     </th>
                 </tr>
 
-            <c:forEach var="item" items="${userItems.item}">
+            <c:forEach var='item' items="${userItems}">
             <tr>
                 <td>${item.category}</td>
-                <td>${item.item_name}</td>
+                <td>${item.itemName}</td>
                 <td>${item.price}</td>
                 <td>
                     <form action="inventory?action=edit" method="post">

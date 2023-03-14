@@ -29,6 +29,8 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate();
         
+        
+        
         getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
@@ -41,7 +43,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         
         switch(action) {
-            case "login":
+            case "signin":
                 String email = request.getParameter("user_email");
                 String password = request.getParameter("user_password");
                 
@@ -83,11 +85,10 @@ public class LoginServlet extends HttpServlet {
             
             
             case "register": 
-                String userRegister = (String) session.getAttribute("userRegisterForm");
+//                String userRegister = (String) session.getAttribute("userRegisterForm");
                 
-                if(userRegister != null) {
-                    session.setAttribute("userRegisterForm", "true");
-                }
+                
+                session.setAttribute("userRegisterForm", "true");
                 
                 response.sendRedirect("login");
                 break;

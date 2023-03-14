@@ -23,7 +23,7 @@
     
             <c:choose>
             <c:when test="${empty userRegisterForm}">
-                <form action="login?action=login" method="post">
+                <form action="login?action=signin" method="post">
                 <div class="centeredpanel" id="loginpane">
                 <h2>Login</h2>
 
@@ -40,48 +40,43 @@
                 <input type="submit" value="Sign In">
                 </div>
                 </div>
-                <a href="<c:url value='/login' />">Register</a>
                 </form>
             </c:when>
-            <c:when test="${userRegisterForm == "true"}">
-                <form action="login?action=register" method="post">
-                <input type="hidden" name="userRegisterForm" value="<c:out value='${null}'/>">
-                <a href="<c:url value='/login?action=register' />">Already have an account.</a>
+            <c:when test="${userRegisterForm eq 'true'}">
+                <form action="login?action=signup" method="post">
+                <div class="centeredpanel" id="loginpane">
+                <h2>Register</h2>
+
+                <div class="centeredpanel fields">
+                <input type="text" placeholder="Email" name="user_email">
+                </div>
+                <div class="centeredpanel fields">
+                <input type="text" placeholder="Password" name="user_password">
+                </div>
+                </div>
+
+                <div id="actionpane">
+                <div id="signin">
+                <input type="submit" value="Sign Up">
+                </div>
+                </div>
+                </form>
+                </form>
             </c:when>
         </c:choose>
-   
-                
-<%--                <form action="login?action=login" method="post">
-    <div class="centeredpanel" id="loginpane">
-    <h2>Login</h2>
-
-    <div class="centeredpanel fields">
-    <input type="text" placeholder="Email" name="user_email">
-    </div>
-    <div class="centeredpanel fields">
-    <input type="text" placeholder="Password" name="user_password">
-    </div>
-    </div>
-
-    <div id="actionpane">
-    <div id="signin">
-    <input type="submit" value="Sign In">
-    </div>
-    </div>
-    </form>--%>
     
-<%--    <form action="login?action=signup" method="post">
-    <div id="registerprompt">
         <c:choose>
             <c:when test="${empty userRegisterForm}">
-                   <a href="<c:url value='/login' />">Register</a>
+                <form action="login?action=register" method="post">
+                    <input type="submit" value="Register">
+                </form>
             </c:when>
-            <c:when test="${userRegisterForm}">
-                <a href="<c:url value='/login' />">Already have an account.</a>
+            <c:when test="${userRegisterForm eq 'true'}">
+                <form action="login?action=logonForm" method="post">
+                    <input type="submit" value="Already have an account.">
+                </form>
             </c:when>
         </c:choose>
-    </div>
-    </form>--%>
 
     </div>
     </body>

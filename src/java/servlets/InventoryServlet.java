@@ -39,8 +39,8 @@ public class InventoryServlet extends HttpServlet {
             } catch (Exception ex) {
                 Logger.getLogger(InventoryServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-//            session.setAttribute("userItems", userItems);
-            request.setAttribute("userItems", userItems);
+            session.setAttribute("userItems", userItems);
+//            request.setAttribute("userItems", userItems);
             
             getServletContext().getRequestDispatcher("/WEB-INF/inventory.jsp").forward(request, response);
     }
